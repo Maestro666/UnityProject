@@ -26,4 +26,6 @@ public class HeroFollow : MonoBehaviour {
 		//Встановлюємо координати камери
 		camera_transform.position = camera_position;
 	}
+
+
 }
