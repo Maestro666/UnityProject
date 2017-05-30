@@ -11,6 +11,8 @@ public class LevelController : MonoBehaviour {
 	}
 
 
+
+
 	public void setStartPosition(Vector3 pos) {
 		this.startingPosition = pos;
 	}
