@@ -12,11 +12,8 @@ public class Rabbit : MonoBehaviour {
 	public float JumpSpeed = 2f;
 	private bool growthOfRabbit = false;
 	private bool dead = false;
-
-	private IEnumerator toStartPoint(){
-		yield return new WaitForSeconds (2f);
-		LevelController.current.onRabitDeath (GetComponent<Rabbit>());
-	}
+	private float respawnDelay= 1f;
+	private float respawnTimeLeft = 0f;
 
 	public void makeBigger(){
 		if (!growthOfRabbit) {
@@ -31,12 +28,14 @@ public class Rabbit : MonoBehaviour {
 			growthOfRabbit = false;
 		} else {
 			RabbitDeath ();
-			StartCoroutine (toStartPoint());
+
 		}
 	}
 
 	private void RabbitDeath () {
 		GetComponent<Animator> ().SetBool ("Die", true);
+		dead = true;
+		respawnTimeLeft = respawnDelay;
 	}
 
 	// Use this for initialization
@@ -48,7 +47,15 @@ public class Rabbit : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(dead){
+			if (respawnTimeLeft <= 0) {
+				LevelController.current.onRabitDeath (GetComponent<Rabbit> ());
+				GetComponent<Animator> ().SetBool ("Die", false);
+				dead = false;
+			} else {
+				respawnTimeLeft -= Time.deltaTime;
+			}
+		}
 	}
 
 
