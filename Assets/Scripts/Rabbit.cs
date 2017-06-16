@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Rabbit : MonoBehaviour {
+	public static Rabbit current;
 	public float speed = 1;
 	Rigidbody2D myBody = null;
 	bool isGrounded = false;
@@ -32,7 +33,9 @@ public class Rabbit : MonoBehaviour {
 		}
 	}
 
-	private void RabbitDeath () {
+	public void RabbitDeath () {
+		if (dead)
+			return;
 		GetComponent<Animator> ().SetBool ("Die", true);
 		dead = true;
 		respawnTimeLeft = respawnDelay;
@@ -42,6 +45,7 @@ public class Rabbit : MonoBehaviour {
 	void Start () {
 		myBody = this.GetComponent<Rigidbody2D> ();
 			LevelController.current.setStartPosition (transform.position);
+		current = this;
 		
 	}
 	
