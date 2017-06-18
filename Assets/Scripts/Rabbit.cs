@@ -44,6 +44,7 @@ public class Rabbit : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		myBody = this.GetComponent<Rigidbody2D> ();
+		if(LevelController.current != null)
 			LevelController.current.setStartPosition (transform.position);
 		current = this;
 		
