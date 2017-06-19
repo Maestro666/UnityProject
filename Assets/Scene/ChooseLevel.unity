@@ -1365,7 +1365,7 @@ Camera:
   far clip plane: 10
   field of view: 60
   orthographic: 1
-  orthographic size: 1
+  orthographic size: 2
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1421,11 +1421,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4538209671035742, guid: 934feb3d88d35664995928e1f4639746, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -534
+      value: -458
       objectReference: {fileID: 0}
     - target: {fileID: 4538209671035742, guid: 934feb3d88d35664995928e1f4639746, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 102
+      value: 241
       objectReference: {fileID: 0}
     - target: {fileID: 4538209671035742, guid: 934feb3d88d35664995928e1f4639746, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1471,6 +1471,56 @@ Prefab:
       propertyPath: topAnchor.target
       value: 
       objectReference: {fileID: 847749501}
+    - target: {fileID: 114831545424314630, guid: 934feb3d88d35664995928e1f4639746,
+        type: 2}
+      propertyPath: leftAnchor.relative
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831545424314630, guid: 934feb3d88d35664995928e1f4639746,
+        type: 2}
+      propertyPath: rightAnchor.relative
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831545424314630, guid: 934feb3d88d35664995928e1f4639746,
+        type: 2}
+      propertyPath: bottomAnchor.relative
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831545424314630, guid: 934feb3d88d35664995928e1f4639746,
+        type: 2}
+      propertyPath: leftAnchor.absolute
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831545424314630, guid: 934feb3d88d35664995928e1f4639746,
+        type: 2}
+      propertyPath: bottomAnchor.absolute
+      value: -143
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831545424314630, guid: 934feb3d88d35664995928e1f4639746,
+        type: 2}
+      propertyPath: topAnchor.absolute
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831545424314630, guid: 934feb3d88d35664995928e1f4639746,
+        type: 2}
+      propertyPath: rightAnchor.absolute
+      value: 354
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831545424314630, guid: 934feb3d88d35664995928e1f4639746,
+        type: 2}
+      propertyPath: mWidth
+      value: 309
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831545424314630, guid: 934feb3d88d35664995928e1f4639746,
+        type: 2}
+      propertyPath: mHeight
+      value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: 114831545424314630, guid: 934feb3d88d35664995928e1f4639746,
+        type: 2}
+      propertyPath: aspectRatio
+      value: 2.452381
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 934feb3d88d35664995928e1f4639746, type: 2}
   m_IsPrefabParent: 0
@@ -1827,6 +1877,7 @@ GameObject:
   - component: {fileID: 1771660474}
   - component: {fileID: 1771660473}
   - component: {fileID: 1771660475}
+  - component: {fileID: 1771660476}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -1912,6 +1963,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.76, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1771660476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1771660472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9efc1ed68af9a4ba1b015c19868f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameOfScene: Level1
 --- !u!4 &1960014700 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4538209671035742, guid: 934feb3d88d35664995928e1f4639746,

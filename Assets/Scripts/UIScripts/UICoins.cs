@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class UICoins : MonoBehaviour {
 
-	UILabel coinsLabel;
+	public UILabel coinsLabel;
 	public static UICoins countCoins;
 
 	// Use this for initialization
-	void Start () {
-		this.coinsLabel = this.transform.GetComponent<UILabel>();
+	void Awake () {
 		countCoins = this;
+        amountOfCoins(0);
 	}
 	
 	// Update is called once per frame
 	public void amountOfCoins (int coins) {
-		
-		
+        coinsLabel.text = coins.ToString("0000");
 	}
 }

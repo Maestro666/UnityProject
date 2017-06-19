@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Rabbit : MonoBehaviour {
+    public int currentHealth;
+    public int maxHealth = 3;
 	public static Rabbit current;
 	public float speed = 1;
 	Rigidbody2D myBody = null;
@@ -47,6 +49,7 @@ public class Rabbit : MonoBehaviour {
 		if(LevelController.current != null)
 			LevelController.current.setStartPosition (transform.position);
 		current = this;
+        currentHealth = maxHealth;
 		
 	}
 	
@@ -97,21 +100,27 @@ public class Rabbit : MonoBehaviour {
 		//Перевіряємо чи проходить лінія через Collider з шаром Ground
 		RaycastHit2D hit = Physics2D.Linecast(from, to, layer_id);
 		if(hit) {
-			if(hit.transform != null
-				&& hit.transform.GetComponent<MovingPlatform>() != null){
-				//Приліпаємо до платформи
-				transform.SetParent(hit.transform);
-			}
-			isGrounded = true;
-		} else {
-			transform.SetParent(null);
+            if (hit.transform != null
+                && hit.transform.GetComponent<MovingPlatform>() != null)
+            {
+                transform.SetParent(hit.transform);
+            }
+            else
+            {
+                transform.SetParent(null);
+            }
+            isGrounded = true;
 		}
+        else
+        {
+            isGrounded = false;
+        }
 		//Намалювати лінію (для розробника)
 		Debug.DrawLine (from, to, Color.red);
 
 		if(Input.GetButtonDown("Jump") && isGrounded) {
 			this.JumpActive = true;
-		}
+		}       
 		if(this.JumpActive) {
 			//Якщо кнопку ще тримають
 			if(Input.GetButton("Jump")) {
