@@ -82,7 +82,7 @@ public class GreenOrc : MonoBehaviour {
 	{
 		mode = Mode.Attack;
 		animator.SetBool ("Attack", true);
-		yield return new WaitForSeconds (0.3f);
+		yield return new WaitForSeconds (0.6f);
 		Rabbit.current.RabbitDeath ();
 		mode = Mode.GoToB;
 
@@ -91,11 +91,11 @@ public class GreenOrc : MonoBehaviour {
 	{
 		if (mode == Mode.GoToA)
 		{
-			return Mathf.Abs (transform.position.x - pointA.x) < 0.1f;
+			return Mathf.Abs (transform.position.x - pointA.x) < 0.2f;
 		}
 		else if (mode == Mode.GoToB)
 		{
-			return Mathf.Abs (transform.position.x - pointB.x) < 0.1f;
+			return Mathf.Abs (transform.position.x - pointB.x) < 0.2f;
 		}
 		else return false;
 	}

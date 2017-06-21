@@ -20,7 +20,7 @@ public class Rabbit : MonoBehaviour {
 
 	public void makeBigger(){
 		if (!growthOfRabbit) {
-			transform.localScale = new Vector3 (1.2f, 1.2f, 0);
+			transform.localScale = new Vector3 (1.4f, 1.4f, 0);
 			growthOfRabbit = true;
 		}
 	}

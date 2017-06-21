@@ -21,7 +21,8 @@ public class LevelController : MonoBehaviour {
 
     public void addCoins(int amount)
     {
-        UICoins.countCoins.amountOfCoins(countCoins + amount);
+        countCoins += amount;
+        UICoins.countCoins.amountOfCoins(countCoins);
     }
 
     public void addFruit(int amount) {
